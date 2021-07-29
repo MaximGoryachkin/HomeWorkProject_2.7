@@ -13,16 +13,18 @@ class TabBarController: UITabBarController {
     let persons = Person.setPersons()
 
     override func viewDidLoad() {
-        
+        prepareVC()
+    }
+    
+    private func prepareVC() {
         guard let viewControllers = viewControllers else { return }
-
+        
         for viewController in viewControllers {
             if let mainVC =
                 viewController as? MainTableViewController {
                 mainVC.persons = persons
-            } else {
-                let directoryVC =
-                    viewController as! DirectoryTableViewController
+            } else if let directoryVC =
+            viewController as? DirectoryTableViewController {
                 directoryVC.persons = persons
             }
         }

@@ -10,12 +10,6 @@ import UIKit
 class DirectoryTableViewController: UITableViewController {
     
     var persons: [Person]!
-    
-    private let numberOfSections = 2
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     // MARK: - Table view data source
 
@@ -30,7 +24,7 @@ class DirectoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        numberOfSections
+        2
     }
     
     override func tableView(_ tableView: UITableView,
